@@ -14,8 +14,6 @@ description: "Example of how to build a bookdown."
 
 # Index
 
-Thursdata was created as a space for presenting codding tolls, analysis techniques and issues related to Conservation Science research topics. 
-A quick summary of the topics discussed during our Thursdata meetings (Thursdays 11 to 12pm) with links to websites and R scripts when appropriate.
 
 
 Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
