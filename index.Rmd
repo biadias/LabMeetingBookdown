@@ -1,6 +1,6 @@
 --- 
-title: "A Minimal Book Example"
-author: "Yihui Xie"
+title: "Lab Meeting Bookdown Example"
+author: "Bia Dias"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -8,15 +8,65 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: rstudio/bookdown-demo
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+github-repo: biadias/LabMeetingBookdown
+description: "Example of how to build a bookdown."
 ---
 
-# Prerequisites
+# Index
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+Thursdata was created as a space for presenting codding tolls, analysis techniques and issues related to Conservation Science research topics. 
+A quick summary of the topics discussed during our Thursdata meetings (Thursdays 11 to 12pm) with links to websites and R scripts when appropriate.
 
-The **bookdown** package can be installed from CRAN or Github:
+
+Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+
+To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX):
+<https://yihui.name/tinytex/>.
+
+ 
+```{r include=FALSE}
+
+#install.packages("tinytex")
+#tinytex::install_tinytex()
+
+```
+
+## Housekeeping
+
+(@) Clone the repository MBayOtolith/Thursdata
+(@) Create a branch
+(@) DO NOT edit the .yml files as they are the main component of the bookdown. 
+(@) .travis.yml is the continuous integration file. However, Travis has no access to our organization repos.
+(@) On your branch (not the master) the work flow will be: Pull->Make changes->save->stage->commit(add notes)->push
+(@) Then the master (Bia) will take your branch and merge->render->publish to have your changes show up on the book
+
+
+Use the `bookdown::render_book("index.Rmd")` to render the .Rmd files into a bookdown format, all packages must be installed and up to date in order to do so. 
+
+
+## Good resources
+
+* Using git and github: <https://happygitwithr.com/>
+* Rmarkdown Tutorials and Sheet Cheats
+  + <https://bookdown.org/yihui/rmarkdown/>
+  + <https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf>
+  + <https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf>
+  + <https://rmarkdown.rstudio.com/lesson-15.html>
+
+
+ 
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+## Notes
+
+_italic_
+**Bold**
+math equation $a^2 + b^2 = c^2$.
 
 ```{r eval=FALSE}
 install.packages("bookdown")
@@ -24,9 +74,6 @@ install.packages("bookdown")
 # devtools::install_github("rstudio/bookdown")
 ```
 
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
